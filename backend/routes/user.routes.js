@@ -1,9 +1,9 @@
-import express from "express"
-import { geUserBySidebar} from '../controller/user.controller.js'
-import protectRoute from "../middleware/protectRoute.js"
+import express from "express";
+import protectRoute from "../middleware/protectRoute.js";
+import { getUsersForSidebar } from "../controllers/user.controller.js";
 
-const router = express.Router()
+const router = express.Router();
 
-router.get('/', protectRoute, geUserBySidebar)
+router.get("/", protectRoute, getUsersForSidebar);
 
-export default router
+export default router;
